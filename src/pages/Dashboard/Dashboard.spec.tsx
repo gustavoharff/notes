@@ -1,13 +1,20 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Greetings from './index';
+import Dashboard from './index';
 
-test('Greetings should renders', () => {
-  const { getByText, getByAltText } = render(<Greetings />);
+jest.mock('../../hooks/notes', () => {
+  return {
+    useNotes: () => ({
+      notes: [{ id: '123', title: 'Title test.', content: 'Description test.' }]
+    })
+  };
+});
+
+test('Dashboard should renders', () => {
+  const { getByText } = render(<Dashboard />);
 
   expect(
-    getByText('An Electron boilerplate including TypeScript, React, Jest and ESLint.')
+    getByText('Title test.')
   ).toBeTruthy();
-  expect(getByAltText('ReactJS logo')).toBeTruthy();
 });

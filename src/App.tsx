@@ -4,14 +4,14 @@ import { GlobalStyle } from './styles/GlobalStyle';
 
 import Dashboard from './pages/Dashboard';
 
-import { NotesProvider } from './hooks/notes';
+import AppProvider from './hooks';
 
 const App = () => {
   return (
-    <NotesProvider>
+    <AppProvider>
       <GlobalStyle />
       <Dashboard />
-    </NotesProvider>
+    </AppProvider>
   );
 };
 

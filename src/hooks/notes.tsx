@@ -31,10 +31,6 @@ const NotesProvider: React.FC = ({ children }) => {
 function useNotes (): NotesContextData {
   const context = useContext(NotesContext);
 
-  if (!context) {
-    throw new Error('useNotes must be used within an NotesProvider');
-  }
-
   return context;
 }
 
