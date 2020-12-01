@@ -3,18 +3,14 @@ import { render } from '@testing-library/react';
 
 import Dashboard from './index';
 
-jest.mock('../../hooks/notes', () => {
-  return {
-    useNotes: () => ({
-      notes: [{ id: '123', title: 'Title test.', content: 'Description test.' }]
-    })
-  };
-});
+jest.mock('../../hooks/notes', () => ({
+  useNotes: () => ({
+    notes: [{ id: '123', title: 'Title test.', content: 'Description test.' }],
+  }),
+}));
 
 test('Dashboard should renders', () => {
   const { getByText } = render(<Dashboard />);
 
-  expect(
-    getByText('Title test.')
-  ).toBeTruthy();
+  expect(getByText('Title test.')).toBeTruthy();
 });

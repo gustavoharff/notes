@@ -2,12 +2,8 @@ import React from 'react';
 
 import { NotesProvider } from './notes';
 
-const AppProvider: React.FC = ({ children }) => {
-  return (
-    <NotesProvider>
-      {children}
-    </NotesProvider>
-  );
-};
+const AppProvider: React.FC = ({ children }) => (
+  <NotesProvider>{children}</NotesProvider>
+);
 
 export default AppProvider;

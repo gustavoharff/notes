@@ -4,12 +4,10 @@ import Notes from '../../components/Notes';
 
 import { Container } from './styles';
 
-const Dashboard: React.FC = () => {
-  return (
-    <Container>
-      <Notes />
-    </Container>
-  );
-};
+const Dashboard: React.FC = () => (
+  <Container>
+    <Notes />
+  </Container>
+);
 
 export default Dashboard;

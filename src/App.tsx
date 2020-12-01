@@ -6,13 +6,11 @@ import Dashboard from './pages/Dashboard';
 
 import AppProvider from './hooks';
 
-const App = () => {
-  return (
-    <AppProvider>
-      <GlobalStyle />
-      <Dashboard />
-    </AppProvider>
-  );
-};
+const App = () => (
+  <AppProvider>
+    <GlobalStyle />
+    <Dashboard />
+  </AppProvider>
+);
 
 reactDOM.render(<App />, document.getElementById('root'));

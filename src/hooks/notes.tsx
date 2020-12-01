@@ -14,13 +14,15 @@ interface NotesContextData {
 const NotesContext = createContext<NotesContextData>({} as NotesContextData);
 
 const NotesProvider: React.FC = ({ children }) => {
-  const [notes, setNotes] = useState<Note[]>([{ id: '123', title: 'Example', content: 'Example' }]);
+  const [notes, setNotes] = useState<Note[]>([
+    { id: '123', title: 'Example', content: 'Example' },
+  ]);
 
   return (
     <NotesContext.Provider
       value={{
         notes,
-        setNotes
+        setNotes,
       }}
     >
       {children}
@@ -28,7 +30,7 @@ const NotesProvider: React.FC = ({ children }) => {
   );
 };
 
-function useNotes (): NotesContextData {
+function useNotes(): NotesContextData {
   const context = useContext(NotesContext);
 
   return context;
